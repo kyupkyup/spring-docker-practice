@@ -1,9 +1,12 @@
 FROM openjdk:11 as builder
+
 COPY gradlew .
 COPY gradle gradle
 COPY build.gradle .
 COPY settings.gradle .
 COPY src src
+COPY gradlew.bat .
+
 RUN chmod +x ./gradlew
 RUN ./gradlew bootjar
 
